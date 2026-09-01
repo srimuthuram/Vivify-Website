@@ -1,0 +1,27 @@
+.top-loading-bar__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 999999;
+  pointer-events: none;
+  background: transparent;
+}
+
+.top-loading-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2865eb, #00d2ff, #2865eb);
+  background-size: 200% 100%;
+  box-shadow: 0 0 10px rgba(40, 101, 235, 0.7), 0 0 5px rgba(0, 210, 255, 0.5);
+  animation: top-bar-glow 1.5s infinite linear;
+}
+
+@keyframes top-bar-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}

@@ -1,0 +1,668 @@
+/* ═══════════════════════════════════════════════════════════
+   INDUSTRIAL AUTOMATION PAGE — Vivify Technocrats (Redesigned)
+   ═══════════════════════════════════════════════════════════ */
+
+.ia-page {
+  position: relative;
+  background: #000000;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.ia-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px;
+  background: #000000;
+}
+
+.ia-hero__layer-1 {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ia-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(40, 101, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 101, 235, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.ia-hero__layer-2 {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.ia-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3) saturate(1.2);
+}
+
+.ia-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.ia-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(40, 101, 235, 0.1);
+  border: 1px solid rgba(40, 101, 235, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #60a5fa;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.ia-hero__badge-icon {
+  font-size: 1.2rem;
+}
+
+.ia-hero__title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.ia-hero__accent {
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ia-hero__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+.ia-hero__systems {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ia-system-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ia-system-icon__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ia-hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.ia-hero__scroll svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TICKER SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.ia-ticker-section {
+  position: relative;
+  padding: 20px 0;
+  background: #000000;
+  border-top: 1px solid rgba(40, 101, 235, 0.2);
+  border-bottom: 1px solid rgba(40, 101, 235, 0.2);
+  overflow: hidden;
+}
+
+.ia-ticker-track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+}
+
+.ia-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #0a0a14;
+  border: 1px solid var(--vendor-color, rgba(40, 101, 235, 0.3));
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+.ia-ticker-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--vendor-color, #2865EB);
+  border-radius: 50%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VENDORS SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.ia-vendors-section {
+  position: relative;
+  padding: 120px 0;
+  background: #000000;
+}
+
+.ia-vendors__container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ia-vendors__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ia-vendors__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ia-vendors__accent {
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ia-vendors__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+.ia-vendors-list {
+  width: 100%;
+}
+
+.ia-vendor-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 36px 0;
+  border-left: 4px solid var(--vendor-color);
+  padding-left: 24px;
+}
+
+.ia-vendor-row__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ia-vendor-row__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ia-vendor-row__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ia-vendor-row__header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.ia-vendor-row__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ia-vendor-row__type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ia-vendor-row__desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ia-vendor-row__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--vendor-color) 0%, transparent 100%);
+  opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ia-vendor-row {
+    padding: 24px 0;
+    gap: 16px;
+  }
+
+  .ia-vendor-row__icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .ia-vendor-row__name {
+    font-size: 1.25rem;
+  }
+
+  .ia-vendor-row__type {
+    font-size: 0.7rem;
+  }
+
+  .ia-vendor-row__desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BENEFITS SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.ia-benefits-section {
+  position: relative;
+  padding: 120px 24px;
+  background: #000000;
+}
+
+.ia-benefits__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ia-benefits__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ia-benefits__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ia-benefits__accent {
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ia-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.ia-benefit-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.ia-benefit-card [class*="animated-border"]::after {
+  background: #0b1329 !important;
+  inset: 2px;
+}
+
+.ia-benefit-card__inner {
+  background: transparent !important;
+}
+
+.ia-benefit-card:hover {
+  transform: translateY(-4px);
+}
+
+.ia-benefit-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.ia-benefit-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.ia-benefit-card__desc {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.ia-benefit-card__counter {
+  padding-top: 16px;
+  border-top: 1px solid rgba(40, 101, 235, 0.2);
+}
+
+.ia-counter {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   OVERVIEW SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.ia-overview-section {
+  position: relative;
+  padding: 120px 24px;
+  background: #000000;
+}
+
+.ia-overview__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ia-overview__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.ia-overview__tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(40, 101, 235, 0.1);
+  border: 1px solid rgba(40, 101, 235, 0.3);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.ia-overview__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.ia-overview__text {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.ia-overview__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.ia-overview__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.ia-overview__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.ia-overview__card:hover .ia-overview__image {
+  transform: scale(1.05);
+}
+
+.ia-overview__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 32px;
+}
+
+.ia-overview__stats {
+  display: flex;
+  gap: 32px;
+}
+
+.ia-overview__stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.ia-overview__stat-label {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CTA SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.ia-cta-section {
+  position: relative;
+  padding: 120px 24px;
+  background: #000000;
+  overflow: hidden;
+}
+
+.ia-cta__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ia-cta__particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(40, 101, 235, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(40, 101, 235, 0.8);
+}
+
+.ia-cta__container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ia-cta__content {
+  padding: 60px;
+  background: #0a0a14;
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(40, 101, 235, 0.3);
+}
+
+.ia-cta__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ia-cta__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+
+.ia-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2865EB, #1d4ed8);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(40, 101, 235, 0.4);
+}
+
+.ia-cta__button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .ia-overview__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ia-hero {
+    padding: 120px 16px 80px;
+  }
+
+  .ia-vendors-section {
+    padding: 80px 16px;
+  }
+
+  .ia-benefits-section {
+    padding: 80px 16px;
+  }
+
+  .ia-overview-section {
+    padding: 80px 16px;
+  }
+
+  .ia-cta-section {
+    padding: 80px 16px;
+  }
+
+  .ia-cta__content {
+    padding: 40px 24px;
+  }
+
+  .ia-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .ia-vendors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ia-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ia-overview__stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ia-hero__systems {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ia-hero__title {
+    font-size: 2rem;
+  }
+
+  .ia-overview__image {
+    height: 300px;
+  }
+
+  .ia-ticker-item {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+  }
+}

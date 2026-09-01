@@ -1,0 +1,566 @@
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ROBOTICS INTEGRATION PAGE â€” Vivify Technocrats (Redesigned)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ri-page {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HERO SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ri-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.ri-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ri-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(40, 101, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 101, 235, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.ri-hero__particles {
+  position: absolute;
+  inset: 0;
+}
+
+.ri-hero__particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(40, 101, 235, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(40, 101, 235, 0.8);
+}
+
+.ri-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.ri-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.ri-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(40, 101, 235, 0.1);
+  border: 1px solid rgba(40, 101, 235, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #93b8fa;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.ri-hero__badge-icon {
+  font-size: 1.2rem;
+}
+
+.ri-hero__title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.ri-hero__accent {
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ri-hero__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+.ri-hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.ri-hero__stat {
+  padding: 20px 32px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(40, 101, 235, 0.3);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.ri-hero__stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.ri-hero__stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PILLARS SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ri-pillars-section {
+  position: relative;
+  padding: 120px 24px;
+  background: #000000;
+}
+
+.ri-pillars__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ri-pillars__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ri-pillars__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ri-pillars__accent {
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ri-pillars__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+.ri-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
+
+.ri-pillar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.ri-pillar-column__background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.ri-pillar-column__glow {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: var(--pillar-color, #10b981);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+}
+
+.ri-pillar-column__number {
+  position: absolute;
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--pillar-color, #10b981);
+  opacity: 0.08;
+  line-height: 1;
+  top: -20px;
+}
+
+.ri-pillar-column__icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.ri-pillar-column:hover .ri-pillar-column__icon {
+  transform: scale(1.05);
+}
+
+.ri-pillar-column__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.ri-pillar-column__title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--pillar-color, #10b981);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.ri-pillar-column:hover .ri-pillar-column__title::after {
+  width: 80px;
+}
+
+.ri-pillar-column__text {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   APPLICATIONS SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ri-applications-section {
+  position: relative;
+  padding: 120px 24px;
+  background: #0a0a0a;
+}
+
+.ri-applications__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ri-applications__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ri-applications__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ri-applications__accent {
+  background: linear-gradient(135deg, #60a5fa, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ri-applications__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+.ri-applications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .ri-applications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ri-applications-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ri-app-card {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .ri-app-card--large {
+    grid-column: span 2;
+  }
+}
+
+.ri-app-card [class*="animated-border"]::after {
+  background: #0b1329 !important;
+  inset: 2px;
+}
+
+.ri-app-card__inner {
+  padding: 20px;
+  background: transparent !important;
+  border-radius: 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ri-app-card__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.ri-app-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.ri-app-card:hover .ri-app-card__image {
+  transform: scale(1.08);
+}
+
+.ri-app-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ri-app-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.ri-app-card:hover .ri-app-card__title {
+  color: var(--app-color, #38bdf8);
+}
+
+.ri-app-card__desc {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CTA SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ri-cta-section {
+  position: relative;
+  padding: 120px 24px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+  overflow: hidden;
+}
+
+.ri-cta__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ri-cta__orb {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(40, 101, 235, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.ri-cta__container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ri-cta__content {
+  padding: 60px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(40, 101, 235, 0.3);
+}
+
+.ri-cta__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ri-cta__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+
+.ri-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2865EB, #2865EB);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(40, 101, 235, 0.4);
+}
+
+.ri-cta__button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+@media (max-width: 1024px) {
+  .ri-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ri-hero {
+    padding: 120px 16px 80px;
+  }
+
+  .ri-pillars-section {
+    padding: 80px 16px;
+  }
+
+  .ri-applications-section {
+    padding: 80px 16px;
+  }
+
+  .ri-cta-section {
+    padding: 80px 16px;
+  }
+
+  .ri-cta__content {
+    padding: 40px 24px;
+  }
+
+  .ri-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .ri-hero__stats {
+    gap: 16px;
+  }
+
+  .ri-hero__stat {
+    padding: 16px 24px;
+  }
+
+  .ri-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .ri-applications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ri-app-card--large {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .ri-hero__title {
+    font-size: 2rem;
+  }
+
+  .ri-hero__stat-value {
+    font-size: 1.5rem;
+  }
+
+  .ri-pillar-card__icon {
+    font-size: 2.5rem;
+  }
+
+  .ri-app__icon {
+    font-size: 2rem;
+  }
+}

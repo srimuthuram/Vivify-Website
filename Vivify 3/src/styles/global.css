@@ -1,0 +1,577 @@
+/* ── Global reset & base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #080b11;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: #080b11;
+  color: #f8fafc;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.app-root-layout,
+.app-main-content {
+  background-color: #080b11;
+}
+
+/* Headings use Archivo Black */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Archivo Black", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 900;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── Focus states for accessibility ── */
+:focus-visible {
+  outline: 2px solid #2865EB;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #2865EB;
+  outline-offset: 2px;
+}
+
+/* ── Reduced motion support ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Typography scale ── */
+:root {
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+  --font-5xl: 3rem;
+  
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+  
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+}
+
+/* ── Selection styling ── */
+::selection {
+  background: rgba(40, 101, 235, 0.2);
+  color: #0f1623;
+}
+
+::-moz-selection {
+  background: rgba(40, 101, 235, 0.2);
+  color: #0f1623;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UNIVERSAL INTERACTIVE HOVER ANIMATIONS & MICRO-INTERACTIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Universal Card Hover Elevations */
+.product-card,
+.service-sec__feature-item,
+.service-sec__ind-card,
+.service-sec__pillar-card,
+.solution-sec__pillar-card,
+.solution-sec__metric-card,
+.about-hero__stat-card,
+.about-values__card,
+.about-hubs__box,
+.case-study-card,
+.careers-culture__card,
+.careers-position,
+.contact-form-card,
+.contact-info-card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.3s ease, 
+              background-color 0.3s ease !important;
+}
+
+.product-card:hover,
+.service-sec__feature-item:hover,
+.service-sec__ind-card:hover,
+.service-sec__pillar-card:hover,
+.solution-sec__pillar-card:hover,
+.solution-sec__metric-card:hover,
+.about-hero__stat-card:hover,
+.about-values__card:hover,
+.about-hubs__box:hover,
+.case-study-card:hover,
+.careers-culture__card:hover,
+.contact-form-card:hover {
+  transform: translateY(-8px) scale(1.015) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Universal Button Hover & Shimmer */
+.services__sticky-btn,
+.solutions__filter-btn,
+.service-sec__cta-btn,
+.solution-sec__cta-btn,
+.products-showcase__cta-btn,
+.case-studies-cta__btn,
+.careers-cta__btn,
+.careers-position__apply-btn,
+.contact-form__submit,
+.contact-info-card__tab {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.25s ease, 
+              background 0.25s ease, 
+              border-color 0.25s ease !important;
+}
+
+.services__sticky-btn:hover,
+.solutions__filter-btn:hover,
+.service-sec__cta-btn:hover,
+.solution-sec__cta-btn:hover,
+.products-showcase__cta-btn:hover,
+.case-studies-cta__btn:hover,
+.careers-cta__btn:hover,
+.careers-position__apply-btn:hover,
+.contact-form__submit:hover,
+.contact-info-card__tab:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Badge & Icon Pulsing Hover */
+.about-hubs__badge:hover,
+.careers-position__tag:hover,
+.product-card__tag:hover {
+  transform: scale(1.1) translateY(-2px) !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PAGE-SPECIFIC EXPLICIT HIGH-VISIBILITY HOVER EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. SERVICES PAGE HOVER EFFECTS */
+.service-sec__feature-item:hover,
+.service-sec__pillar-card:hover,
+.service-sec__ind-card:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  border-color: #2865EB !important;
+  box-shadow: 0 20px 40px rgba(40, 101, 235, 0.25) !important;
+  cursor: pointer;
+}
+
+.service-sec__feature-item:hover .service-sec__feature-icon,
+.service-sec__pillar-card:hover .service-sec__pillar-icon,
+.service-sec__ind-card:hover .service-sec__ind-icon {
+  transform: scale(1.25) rotate(6deg) !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* 2. SOLUTIONS PAGE HOVER EFFECTS */
+.solution-sec__pillar-card:hover,
+.solution-sec__metric-card:hover,
+.solution-sec__overview-box:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  border-color: #22d3ee !important;
+  box-shadow: 0 20px 40px rgba(34, 211, 238, 0.25) !important;
+  cursor: pointer;
+}
+
+.solutions__filter-btn:hover {
+  background: rgba(40, 101, 235, 0.2) !important;
+  border-color: #2865EB !important;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+
+/* 3. PRODUCTS PAGE HOVER EFFECTS */
+.product-card:hover {
+  transform: translateY(-12px) scale(1.03) !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 24px 50px rgba(56, 189, 248, 0.3) !important;
+  cursor: pointer;
+}
+
+.product-card:hover .product-card__icon-box {
+  transform: scale(1.2) rotate(-5deg) !important;
+  background: rgba(56, 189, 248, 0.2) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.product-card__spec-btn:hover {
+  background: #38bdf8 !important;
+  color: #0f172a !important;
+  transform: scale(1.05) !important;
+}
+
+/* 4. CASE STUDIES PAGE HOVER EFFECTS */
+.case-study-card:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 24px 50px rgba(16, 185, 129, 0.25) !important;
+  cursor: pointer;
+}
+
+.case-study-card:hover .case-study-card__title {
+  color: #10b981 !important;
+  transition: color 0.3s ease !important;
+}
+
+.case-study-card__tag:hover {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #10b981 !important;
+  transform: scale(1.08) !important;
+}
+
+/* 5. CONTACT PAGE HOVER EFFECTS */
+.contact-form-card:hover,
+.contact-info-card:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+  border-color: #0891b2 !important;
+  box-shadow: 0 20px 45px rgba(8, 145, 178, 0.15) !important;
+}
+
+.contact-form__input:hover,
+.contact-form__input:focus {
+  border-color: #0891b2 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.15) !important;
+}
+
+.contact-form__submit:hover {
+  background: #0e7490 !important;
+  transform: translateY(-4px) scale(1.03) !important;
+  box-shadow: 0 12px 30px rgba(8, 145, 178, 0.4) !important;
+}
+
+.contact-info-card__tab:hover {
+  background: rgba(34, 211, 238, 0.2) !important;
+  border-color: #22d3ee !important;
+  color: #22d3ee !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   6. HOME PAGE — WHY CHOOSE US CARD HOVER EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+.wcu__card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.3s ease !important;
+}
+
+.wcu__card:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 24px 48px rgba(40, 101, 235, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(40, 101, 235, 0.35) !important;
+}
+
+.wcu__card:hover .wcu__card-icon {
+  transform: scale(1.15) rotate(-6deg) !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.wcu__card:hover .wcu__card-title {
+  color: #2865EB !important;
+  transition: color 0.3s ease !important;
+}
+
+/* Stats hover */
+.wcu__stat {
+  transition: background 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.wcu__stat:hover {
+  background: #eef4ff !important;
+  transform: translateY(-4px) !important;
+}
+
+.wcu__stat:hover .wcu__stat-num {
+  color: #2865EB !important;
+  transition: color 0.3s ease !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   7. HOME PAGE — INDUSTRIES COVERFLOW CARD ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════ */
+.ind__card {
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.7s ease,
+              box-shadow 0.4s ease !important;
+}
+
+.ind__card--active:hover {
+  box-shadow: 0 24px 60px rgba(40, 101, 235, 0.2) !important;
+}
+
+.ind__card-button {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.ind__card-button:hover {
+  background: rgba(40, 101, 235, 0.35) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   8. HOME PAGE — HERO TAG HOVER ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════ */
+.hero__tag {
+  transition: background 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.32s ease,
+              color 0.32s ease,
+              transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.32s ease !important;
+}
+
+.hero__tag:hover {
+  background: #edf3fe !important;
+  border-color: rgba(40, 101, 235, 0.3) !important;
+  color: #2865EB !important;
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 6px 18px rgba(40, 101, 235, 0.12) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   9. FOOTER LINK HOVER EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+.ftr__col-link {
+  transition: color 0.22s ease, gap 0.22s ease, transform 0.25s ease !important;
+}
+
+.ftr__col-link:hover {
+  color: #e2e8f0 !important;
+  transform: translateX(4px) !important;
+}
+
+.ftr__social-btn {
+  transition: background 0.25s ease, color 0.25s ease,
+              border-color 0.25s ease,
+              transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.28s ease !important;
+}
+
+.ftr__social-btn:hover {
+  background: #2865EB !important;
+  color: #fff !important;
+  border-color: #2865EB !important;
+  transform: translateY(-4px) scale(1.12) !important;
+  box-shadow: 0 8px 24px rgba(40, 101, 235, 0.35) !important;
+}
+
+.ftr__contact-icon {
+  transition: background 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.ftr__contact-item:hover .ftr__contact-icon {
+  background: rgba(40, 101, 235, 0.28) !important;
+  transform: scale(1.1) rotate(-3deg) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   10. ABOUT PAGE — TIMELINE & VALUES HOVER EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+.about-timeline__item {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.3s ease !important;
+  cursor: default;
+}
+
+.about-timeline__item:hover {
+  transform: translateX(6px) !important;
+  background: rgba(40, 101, 235, 0.03) !important;
+  border-radius: 12px;
+}
+
+.about-timeline__year {
+  transition: color 0.3s ease, transform 0.3s ease !important;
+}
+
+.about-timeline__item:hover .about-timeline__year {
+  color: #2865EB !important;
+  transform: scale(1.05) !important;
+}
+
+.about-values__card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.3s ease !important;
+}
+
+.about-values__card:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 24px 50px rgba(40, 101, 235, 0.12) !important;
+  border-color: rgba(40, 101, 235, 0.2) !important;
+}
+
+.about-values__card:hover .about-values__icon {
+  transform: scale(1.15) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.about-hubs__box {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.3s ease !important;
+}
+
+.about-hubs__box:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 40px rgba(40, 101, 235, 0.1) !important;
+}
+
+.about-hubs__badge {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease !important;
+}
+
+.about-hubs__badge:hover {
+  transform: scale(1.08) translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(40, 101, 235, 0.15) !important;
+  background: #dde6fe !important;
+  color: #2865EB !important;
+}
+
+.about-hubs__badge--port:hover {
+  background: #dcfce7 !important;
+  color: #059669 !important;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.15) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   11. CAREERS PAGE — ENHANCED HOVER EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+.careers-culture__card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.3s ease !important;
+}
+
+.careers-culture__card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(40, 101, 235, 0.2) !important;
+}
+
+.careers-position {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.3s ease,
+              box-shadow 0.3s ease !important;
+}
+
+.careers-position:hover {
+  transform: translateX(6px) !important;
+  background: rgba(40, 101, 235, 0.03) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+.careers-position__apply-btn {
+  transition: transform 0.25s ease, background 0.25s ease,
+              box-shadow 0.25s ease !important;
+}
+
+.careers-position__apply-btn:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 8px 20px rgba(40, 101, 235, 0.3) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   12. GLOBAL IMAGE & LINK HOVER POLISH
+   ═══════════════════════════════════════════════════════════ */
+
+/* Smooth focus ring for all interactive elements */
+button, a, input, select, textarea {
+  transition: outline-offset 0.15s ease;
+}
+
+/* Smooth appearance for all section badges */
+[class*="__badge"]:not(.hero__badge):not(.wcu__badge) {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease !important;
+}
+
+[class*="__badge"]:not(.hero__badge):not(.wcu__badge):hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   13. LOADING FALLBACK STYLES
+   ═══════════════════════════════════════════════════════════ */
+.loading-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+img {
+  will-change: auto;
+}
+
+/* Optimize scrolling performance */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+

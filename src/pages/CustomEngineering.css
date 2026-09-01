@@ -1,0 +1,744 @@
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CUSTOM ENGINEERING PAGE â€” Vivify Technocrats (Redesigned)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ce-page {
+  position: relative;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HERO SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ce-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px;
+}
+
+.ce-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(40, 101, 235, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 101, 235, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(40, 101, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 101, 235, 0.03) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  pointer-events: none;
+}
+
+.ce-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #0a0e27;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ce-hero__bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 39, 0.85);
+}
+
+.ce-hero__blueprint {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.ce-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(40, 101, 235, 0.08) 0%, transparent 30%);
+}
+
+.ce-hero__measurement {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(59, 130, 246, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+}
+
+.ce-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.ce-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #60a5fa;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+}
+
+.ce-hero__badge-icon {
+  font-size: 1.2rem;
+}
+
+.ce-hero__title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  opacity: 0;
+}
+
+.ce-hero__accent {
+  background: linear-gradient(135deg, #2865EB, #1a4cc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ce-hero__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 48px;
+  opacity: 0;
+}
+
+.ce-hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.ce-hero__stat {
+  padding: 20px 32px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  text-align: center;
+  opacity: 0;
+}
+
+.ce-hero__stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #3b82f6, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.ce-hero__stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BLUEPRINT SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ce-blueprint-section {
+  position: relative;
+  padding: 120px 24px;
+  background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+}
+
+.ce-blueprint__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ce-blueprint__header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.ce-blueprint__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ce-blueprint__accent {
+  background: linear-gradient(135deg, #3b82f6, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ce-blueprint__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+.ce-blueprint__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  margin-bottom: 60px;
+  padding: 40px;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.ce-blueprint-line {
+  height: 2px;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 1px;
+}
+
+.ce-phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.ce-phase-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.ce-phase-card__inner {
+  padding: 32px 24px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ce-phase-card__step {
+  width: 64px;
+  height: 64px;
+  border: 3px solid var(--phase-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ce-phase-card__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.ce-phase-card__desc {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.ce-phase-card__glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.ce-specs-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ce-spec {
+  padding: 12px 24px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BENEFITS SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ce-benefits-section {
+  position: relative;
+  padding: 120px 24px;
+  background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+}
+
+.ce-benefits__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ce-benefits__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ce-benefits__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ce-benefits__accent {
+  background: linear-gradient(135deg, #3b82f6, #2865EB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ce-benefits__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+.ce-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.ce-benefit-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.ce-benefit-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, var(--benefit-color), transparent, var(--benefit-color), transparent, var(--benefit-color));
+  border-radius: 22px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  background-size: 400% 400%;
+  animation: shimmerBorder 3s ease infinite;
+}
+
+.ce-benefit-card:hover::before {
+  opacity: 1;
+}
+
+.ce-benefit-card__inner {
+  padding: 32px 24px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ce-benefit-card:hover .ce-benefit-card__inner {
+  border-color: var(--benefit-color);
+  box-shadow: 0 0 30px rgba(var(--benefit-color), 0.5);
+  transform: translateY(-8px) rotateX(0);
+}
+
+.ce-benefit-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.ce-benefit-card__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ce-benefit-card__expanded {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.ce-benefit-card:hover .ce-benefit-card__expanded {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 16px;
+}
+
+.ce-benefit-card__desc {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.ce-benefit-card__content {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.ce-benefit-card__glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CASE STUDY SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ce-case-section {
+  position: relative;
+  padding: 120px 24px;
+  background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+}
+
+.ce-case__container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ce-case-card {
+  padding: 60px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  text-align: center;
+}
+
+.ce-case-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #3b82f6;
+  margin-bottom: 16px;
+}
+
+.ce-case-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ce-case-desc {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.ce-case-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 32px;
+}
+
+.ce-case-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.ce-case-slabel {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CTA SECTION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+.ce-cta-section {
+  position: relative;
+  padding: 120px 24px;
+  background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+  overflow: hidden;
+}
+
+.ce-cta__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ce-cta__gear {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.ce-cta__container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ce-cta__content {
+  padding: 60px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.ce-cta__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ce-cta__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+
+.ce-cta__button {
+  display: inline-block;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #2865EB);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+@media (max-width: 1024px) {
+  .ce-hero__title {
+    font-size: 2.8rem;
+  }
+  
+  .ce-hero__subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .ce-hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .ce-blueprint__grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  
+  .ce-phases-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .ce-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .ce-case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ce-hero {
+    padding: 100px 20px 80px;
+  }
+
+  .ce-blueprint-section {
+    padding: 80px 20px;
+  }
+
+  .ce-benefits-section {
+    padding: 80px 20px;
+  }
+
+  .ce-case-section {
+    padding: 80px 20px;
+  }
+
+  .ce-cta-section {
+    padding: 80px 20px;
+  }
+
+  .ce-cta__content {
+    padding: 40px 24px;
+  }
+
+  .ce-case-card {
+    padding: 40px 24px;
+  }
+
+  .ce-hero__title {
+    font-size: 2.2rem;
+  }
+  
+  .ce-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .ce-hero__stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .ce-hero__stat {
+    padding: 16px 24px;
+  }
+  
+  .ce-hero__stat-value {
+    font-size: 2rem;
+  }
+
+  .ce-blueprint__grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 24px;
+    gap: 12px;
+  }
+  
+  .ce-blueprint-item {
+    padding: 16px 12px;
+  }
+  
+  .ce-blueprint-item__icon {
+    font-size: 1.5rem;
+  }
+  
+  .ce-blueprint-item__label {
+    font-size: 0.75rem;
+  }
+
+  .ce-phases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .ce-phase-card {
+    padding: 32px 24px;
+  }
+  
+  .ce-phase-card__step {
+    width: 64px;
+    height: 64px;
+    font-size: 1.2rem;
+  }
+
+  .ce-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .ce-benefit-card {
+    padding: 32px 24px;
+  }
+  
+  .ce-benefit-card__title {
+    font-size: 1.1rem;
+  }
+  
+  .ce-benefit-card__desc {
+    font-size: 0.9rem;
+  }
+  
+  .ce-benefit-card__content {
+    font-size: 0.85rem;
+  }
+
+  .ce-case-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .ce-cta__title {
+    font-size: 1.8rem;
+  }
+  
+  .ce-cta__subtitle {
+    font-size: 1rem;
+  }
+}
+
+@keyframes shimmerBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

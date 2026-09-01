@@ -1,0 +1,645 @@
+/* ═══════════════════════════════════════════════════════════
+   DATA CENTRE SOLUTIONS PAGE — Vivify Technocrats (Redesigned)
+   ═══════════════════════════════════════════════════════════ */
+
+.dcs-page {
+  position: relative;
+  background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.dcs-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(40, 101, 235, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(40, 101, 235, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.dcs-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px;
+}
+
+.dcs-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(40, 101, 235, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(40, 101, 235, 0.05) 2px, transparent 2px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.dcs-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #020617;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dcs-hero__bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.85);
+}
+
+.dcs-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(40, 101, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 101, 235, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dcs-hero__circuit {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(40, 101, 235, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(40, 101, 235, 0.1) 0%, transparent 30%);
+}
+
+.dcs-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.dcs-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(40, 101, 235, 0.1);
+  border: 1px solid rgba(40, 101, 235, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #60a5fa;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+}
+
+.dcs-hero__badge-icon {
+  font-size: 1.2rem;
+}
+
+.dcs-hero__title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  opacity: 0;
+}
+
+.dcs-hero__accent {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dcs-hero__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 48px;
+  opacity: 0;
+}
+
+.dcs-hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.dcs-hero__stat {
+  padding: 20px 32px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 16px;
+  text-align: center;
+  opacity: 0;
+}
+
+.dcs-hero__stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.dcs-hero__stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HORIZONTAL SCROLL SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.dcs-horizontal-section {
+  position: relative;
+  padding: 120px 24px;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+}
+
+.dcs-horizontal-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(251, 191, 36, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.dcs-horizontal__container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.dcs-horizontal__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.dcs-horizontal__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.dcs-horizontal__accent {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dcs-horizontal__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+.dcs-carousel-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dcs-carousel__nav-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.dcs-carousel__nav {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.2);
+  border: 2px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.dcs-carousel__nav:hover {
+  background: rgba(56, 189, 248, 0.4);
+  border-color: #38bdf8;
+  transform: scale(1.1);
+}
+
+.dcs-horizontal__wrapper {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 32px;
+  padding: 16px 8px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  max-width: 1050px;
+  min-width: 0;
+}
+
+.dcs-horizontal__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.dcs-horizontal__panel {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dcs-horizontal__panel--centered {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.dcs-horizontal__panel--centered .dcs-section-card__inner {
+  border-color: var(--section-color);
+  box-shadow: 0 20px 50px rgba(var(--section-color), 0.5);
+}
+
+.dcs-section-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dcs-section-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, var(--section-color), transparent, var(--section-color));
+  border-radius: 22px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  background-size: 200% 100%;
+  animation: borderSlide 2s linear infinite;
+}
+
+.dcs-horizontal__panel--centered .dcs-section-card::before {
+  opacity: 1;
+}
+
+@keyframes borderSlide {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.dcs-section-card__inner {
+  padding: 32px 24px;
+  background: rgba(30, 41, 59, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.dcs-section-card__icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.dcs-section-card:hover .dcs-section-card__icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.dcs-section-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  transition: all 0.4s ease;
+  line-height: 1.2;
+}
+
+.dcs-section-card:hover .dcs-section-card__title {
+  color: var(--section-color);
+  transform: translateY(-3px);
+}
+
+.dcs-section-card__subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.dcs-section-card__desc {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dcs-section-card__glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FEATURES SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.dcs-features-section {
+  position: relative;
+  padding: 120px 24px;
+  background: #020617;
+}
+
+.dcs-features-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.dcs-features__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.dcs-features__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.dcs-features__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.dcs-features__accent {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dcs-features__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+.dcs-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.dcs-feature-card {
+  padding: 32px 24px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dcs-feature-card:hover {
+  border-color: rgba(56, 189, 248, 0.8);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.3);
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.dcs-feature-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.dcs-feature-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.dcs-feature-card__desc {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CTA SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.dcs-cta-section {
+  position: relative;
+  padding: 120px 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+  overflow: hidden;
+}
+
+.dcs-cta__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.dcs-cta__particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(56, 189, 248, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+}
+
+.dcs-cta__container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dcs-cta__content {
+  padding: 60px;
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.dcs-cta__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.dcs-cta__subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+
+.dcs-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+}
+
+.dcs-cta__button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .dcs-hero {
+    padding: 120px 16px 80px;
+  }
+
+  .dcs-horizontal-section {
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .dcs-horizontal__wrapper {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .dcs-horizontal__panel {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+  }
+
+  .dcs-section-card__inner {
+    padding: 40px 24px;
+  }
+
+  .dcs-features-section {
+    padding: 80px 16px;
+  }
+
+  .dcs-cta-section {
+    padding: 80px 16px;
+  }
+
+  .dcs-cta__content {
+    padding: 40px 24px;
+  }
+
+  .dcs-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .dcs-hero__stats {
+    gap: 16px;
+  }
+
+  .dcs-hero__stat {
+    padding: 16px 24px;
+  }
+
+  .dcs-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dcs-hero__title {
+    font-size: 2rem;
+  }
+
+  .dcs-hero__stat-value {
+    font-size: 1.5rem;
+  }
+
+  .dcs-section-card__icon {
+    font-size: 3rem;
+  }
+
+  .dcs-section-card__title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,304 @@
+.animated-border {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 1. Standard Flow (Single Rotating Beam) */
+.animated-border--flow {
+  position: relative;
+  border-radius: 16px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.animated-border--flow::before {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--color-1, #60a5fa) 40deg,
+    var(--color-2, #2563eb) 90deg,
+    var(--color-3, #38bdf8) 140deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+  animation: flowRotate var(--border-speed, 3s) linear infinite;
+  z-index: 0;
+}
+
+.animated-border--flow::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1;
+}
+
+.animated-border--flow > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 2. Flow Dual (Two Opposite Chasing Beams) */
+.animated-border--flow-dual {
+  position: relative;
+  border-radius: 16px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.animated-border--flow-dual::before {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--color-1, #38bdf8) 35deg,
+    var(--color-2, #2865EB) 75deg,
+    transparent 110deg,
+    transparent 180deg,
+    var(--color-1, #38bdf8) 215deg,
+    var(--color-3, #60a5fa) 255deg,
+    transparent 290deg,
+    transparent 360deg
+  );
+  animation: flowRotate var(--border-speed, 3.5s) linear infinite;
+  z-index: 0;
+  border-radius: 16px;
+}
+
+.animated-border--flow-dual::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1;
+}
+
+.animated-border--flow-dual > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 3. Flow Rainbow (Multi-color Spectrum Flow) */
+.animated-border--flow-rainbow {
+  position: relative;
+  border-radius: 16px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.animated-border--flow-rainbow::before {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(
+    from 0deg,
+    #06b6d4 0deg,
+    #3b82f6 60deg,
+    #2865EB 120deg,
+    #38bdf8 180deg,
+    #1a4cc4 240deg,
+    #10b981 300deg,
+    #06b6d4 360deg
+  );
+  animation: flowRotate var(--border-speed, 4s) linear infinite;
+  z-index: 0;
+}
+
+.animated-border--flow-rainbow::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1;
+}
+
+.animated-border--flow-rainbow > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 4. Flow Pulse (Pulsating Flowing Beam) */
+.animated-border--flow-pulse {
+  position: relative;
+  border-radius: 16px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.animated-border--flow-pulse::before {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--color-1, #2865EB) 30deg,
+    var(--color-2, #60a5fa) 80deg,
+    transparent 140deg,
+    transparent 360deg
+  );
+  animation: flowRotate var(--border-speed, 2.5s) linear infinite, flowPulseGlow 2s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.animated-border--flow-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1;
+}
+
+.animated-border--flow-pulse > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 5. Flow Shimmer (Liquid Laser Sweep) */
+.animated-border--flow-shimmer {
+  position: relative;
+  border-radius: 16px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.animated-border--flow-shimmer::before {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--color-1, #10b981) 20deg,
+    var(--color-2, #06b6d4) 60deg,
+    var(--color-3, #a7f3d0) 100deg,
+    transparent 150deg,
+    transparent 360deg
+  );
+  animation: flowRotate var(--border-speed, 2.8s) linear infinite;
+  z-index: 0;
+}
+
+.animated-border--flow-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1;
+}
+
+.animated-border--flow-shimmer > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 6. Flow Corner (Corner Highlight Trailing Beams) */
+.animated-border--flow-corner {
+  position: relative;
+  border-radius: 16px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.animated-border--flow-corner::before {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--color-1, #2865EB) 25deg,
+    var(--color-2, #38bdf8) 75deg,
+    transparent 120deg,
+    transparent 360deg
+  );
+  animation: flowRotate var(--border-speed, 3.2s) linear infinite;
+  z-index: 0;
+}
+
+.animated-border--flow-corner::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1;
+}
+
+.animated-border--flow-corner > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Base Keyframes */
+@keyframes flowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes flowPulseGlow {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Legacy support styles */
+.animated-border--gradient {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.animated-border--gradient::before {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(from 0deg, var(--color-1, #2865EB), var(--color-2, #1a4cc4), var(--color-3, #163a9e), var(--color-1, #2865EB));
+  animation: flowRotate var(--border-speed, 3s) linear infinite;
+  z-index: 0;
+}
+.animated-border--gradient::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1;
+}
+.animated-border--gradient > * {
+  position: relative;
+  z-index: 2;
+}

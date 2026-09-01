@@ -1,0 +1,238 @@
+/* ═══════════════════════════════════════════════════════
+   OUR STORY — About Section
+   ═══════════════════════════════════════════════════════ */
+
+.our-story {
+  position: relative;
+  background: #0a0e1a;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* ── Container ── */
+.our-story__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ── Header (Badge + Heading) ── */
+.our-story__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Main section (Content + Image) ── */
+.our-story__main {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ── Content Section ── */
+.our-story__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Image Section ── */
+.our-story__image-wrapper {
+  flex: 1;
+}
+
+/* ── Content Section ── */
+.our-story__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.our-story__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px 7px 10px;
+  background: linear-gradient(135deg, rgba(40,101,235,0.2) 0%, rgba(96,165,250,0.15) 100%);
+  border: 1px solid rgba(40,101,235,0.3);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  width: fit-content;
+}
+
+.our-story__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2865EB;
+  box-shadow: 0 0 0 3px rgba(40,101,235,0.2);
+  flex-shrink: 0;
+  animation: badge-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(40,101,235,0.2); }
+  50%      { box-shadow: 0 0 0 7px rgba(40,101,235,0.06); }
+}
+
+.our-story__heading {
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.our-story__description {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.our-story__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #2865EB 0%, #1a4cc4 50%, #163a9e 100%);
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+  margin-top: 8px;
+  box-shadow: 0 4px 16px rgba(40,101,235,0.25), 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.our-story__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(40,101,235,0.35), 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.our-story__btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.our-story__btn:hover .our-story__btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Image Section ── */
+.our-story__image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+}
+
+.our-story__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.our-story__image-wrapper:hover .our-story__image {
+  transform: scale(1.05);
+}
+
+/* ── Responsive Design ── */
+@media (max-width: 968px) {
+  .our-story__container {
+    gap: 40px;
+    padding: 0 32px;
+  }
+
+  .our-story__main {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .our-story__image-wrapper {
+    order: 1;
+  }
+
+  .our-story__content {
+    order: 2;
+  }
+
+  .our-story {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .our-story__container {
+    padding: 0 20px;
+    gap: 32px;
+  }
+
+  .our-story {
+    padding: 48px 0;
+  }
+
+  .our-story__heading {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .our-story__description {
+    font-size: 0.9rem;
+  }
+
+  .our-story__btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .our-story__image-wrapper {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-story__container {
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .our-story {
+    padding: 40px 0;
+  }
+
+  .our-story__badge {
+    font-size: 0.7rem;
+    padding: 6px 12px 6px 8px;
+  }
+
+  .our-story__heading {
+    font-size: clamp(1.4rem, 7vw, 1.8rem);
+  }
+
+  .our-story__description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .our-story__btn {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+}

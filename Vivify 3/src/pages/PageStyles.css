@@ -1,0 +1,502 @@
+/* ═══════════════════════════════════════════════════════════
+   SHARED PAGE DESIGN TOKENS — Vivify Technocrats
+   Premium effects, reusable across all service/solution pages
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Animated gradient border (spinning conic) ── */
+@property --grad-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin-border { to { --grad-angle: 360deg; } }
+
+/* ── Shimmer sweep ── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* ── Float bob ── */
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ── Counter pulse ── */
+@keyframes counter-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* ── Fade up (scroll reveal base) ── */
+.page-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
+              transform 0.75s cubic-bezier(0.16,1,0.3,1);
+}
+.page-fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Fade from left ── */
+.page-fade-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
+              transform 0.75s cubic-bezier(0.16,1,0.3,1);
+}
+.page-fade-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Fade from right ── */
+.page-fade-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
+              transform 0.75s cubic-bezier(0.16,1,0.3,1);
+}
+.page-fade-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Scale in ── */
+.page-scale-in {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+              transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.page-scale-in.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Glowing divider line ── */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, currentColor 50%, transparent 100%);
+  opacity: 0.2;
+  margin: 60px 0;
+}
+
+/* ── Noise texture overlay ── */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ── Live glowing border card ── */
+.live-border-card {
+  position: relative;
+  border-radius: 20px;
+  background:
+    linear-gradient(rgba(10,10,20,0.7), rgba(10,10,20,0.7)) padding-box,
+    conic-gradient(from var(--grad-angle), rgba(255,255,255,0.04) 0deg, rgba(255,255,255,0.55) 90deg, rgba(255,255,255,0.04) 180deg, rgba(255,255,255,0.55) 270deg, rgba(255,255,255,0.04) 360deg) border-box;
+  border: 1.5px solid transparent;
+  animation: spin-border 4s linear infinite;
+  backdrop-filter: blur(20px);
+}
+
+/* ── Shimmer button ── */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: translateX(-100%);
+  transition: none;
+}
+.shimmer-btn:hover::after {
+  animation: shimmer 0.6s ease forwards;
+}
+
+/* ── 3D tilt card wrapper ── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* ── Stat number ── */
+.stat-num-animated {
+  font-variant-numeric: tabular-nums;
+  animation: counter-pulse 2s ease infinite;
+}
+
+/* ── Gradient text utility ── */
+.grad-text-green  { background: linear-gradient(135deg, #4ade80, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grad-text-amber  { background: linear-gradient(135deg, #f59e0b, #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grad-text-cyan   { background: linear-gradient(135deg, #22d3ee, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grad-text-blue   { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grad-text-teal   { background: linear-gradient(135deg, #2dd4bf, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grad-text-gold   { background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* ── Section label tag ── */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.section-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+  animation: badge-pulse 2s ease infinite;
+}
+
+/* ── Grid responsive helpers ── */
+.page-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+@media (min-width: 900px) {
+  .page-grid-2 { grid-template-columns: 1fr 1fr; gap: 64px; }
+}
+
+.page-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 700px) {
+  .page-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .page-grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Standard page container ── */
+.page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 640px) {
+  .page-container { padding: 0 20px; }
+}
+
+/* ── CTA banner strip ── */
+.page-cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 36px 48px;
+  border-radius: 20px;
+  margin-top: 80px;
+}
+@media (max-width: 640px) {
+  .page-cta-strip { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LIVE BORDER ANIMATION LIBRARY
+   6 distinct animations — apply via utility classes or page CSS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 1. COMET — single bright spark racing clockwise ── */
+@property --lb-comet { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes lb-comet-spin { to { --lb-comet: 360deg; } }
+.lb-comet {
+  background:
+    conic-gradient(
+      from var(--lb-comet),
+      transparent 0deg, transparent 65deg,
+      rgba(147,210,255,0.18) 80deg,
+      rgba(200,230,255,0.7)  90deg,
+      #fff                   93deg,
+      rgba(200,230,255,0.7)  96deg,
+      rgba(147,210,255,0.18) 110deg,
+      transparent 125deg, transparent 360deg
+    );
+  animation: lb-comet-spin 2.6s linear infinite;
+}
+
+/* ── 2. DUAL-COMET — two comets opposite each other ── */
+@property --lb-dual { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes lb-dual-spin { to { --lb-dual: 360deg; } }
+.lb-dual-comet {
+  background:
+    conic-gradient(
+      from var(--lb-dual),
+      transparent 0deg, transparent 55deg,
+      rgba(99,179,237,0.2)  70deg,
+      rgba(147,210,255,0.8) 80deg,
+      #fff                  83deg,
+      rgba(147,210,255,0.8) 86deg,
+      rgba(99,179,237,0.2)  96deg,
+      transparent 110deg,
+      transparent 175deg,
+      rgba(99,179,237,0.2)  190deg,
+      rgba(147,210,255,0.8) 200deg,
+      #fff                  203deg,
+      rgba(147,210,255,0.8) 206deg,
+      rgba(99,179,237,0.2)  216deg,
+      transparent 230deg, transparent 360deg
+    );
+  animation: lb-dual-spin 3s linear infinite;
+}
+
+/* ── 3. PULSE-GLOW — border breathes in opacity ── */
+@keyframes lb-pulse-glow {
+  0%,100% {
+    border-color: rgba(40,101,235,0.2);
+    box-shadow: 0 0 0px rgba(40,101,235,0);
+  }
+  50% {
+    border-color: rgba(40,101,235,0.7);
+    box-shadow: 0 0 18px rgba(40,101,235,0.3), inset 0 0 12px rgba(40,101,235,0.06);
+  }
+}
+.lb-pulse-glow {
+  border: 1.5px solid rgba(40,101,235,0.2) !important;
+  animation: lb-pulse-glow 2.4s ease-in-out infinite;
+}
+
+/* ── 4. RACE-DASH — dashed border rotates ── */
+@property --lb-race { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes lb-race-spin { to { --lb-race: 360deg; } }
+.lb-race-dash {
+  background:
+    conic-gradient(
+      from var(--lb-race),
+      rgba(255,255,255,0.55) 0deg,  rgba(255,255,255,0.55) 18deg,
+      transparent            18deg, transparent            54deg,
+      rgba(255,255,255,0.55) 54deg, rgba(255,255,255,0.55) 72deg,
+      transparent            72deg, transparent            108deg,
+      rgba(255,255,255,0.55) 108deg,rgba(255,255,255,0.55) 126deg,
+      transparent            126deg,transparent            162deg,
+      rgba(255,255,255,0.55) 162deg,rgba(255,255,255,0.55) 180deg,
+      transparent            180deg,transparent            216deg,
+      rgba(255,255,255,0.55) 216deg,rgba(255,255,255,0.55) 234deg,
+      transparent            234deg,transparent            270deg,
+      rgba(255,255,255,0.55) 270deg,rgba(255,255,255,0.55) 288deg,
+      transparent            288deg,transparent            324deg,
+      rgba(255,255,255,0.55) 324deg,rgba(255,255,255,0.55) 342deg,
+      transparent            342deg,transparent            360deg
+    );
+  animation: lb-race-spin 4s linear infinite;
+}
+
+/* ── 5. SHIMMER-WAVE — gradient sweeps left-to-right continuously ── */
+@keyframes lb-shimmer-wave {
+  0%   { border-image-source: linear-gradient(90deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0.08) 40%); }
+  50%  { border-image-source: linear-gradient(90deg, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.08) 100%); }
+  100% { border-image-source: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.5) 40%); }
+}
+/* shimmer-wave uses a pseudo + background-position scroll trick */
+@property --lb-shimmer { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@keyframes lb-shimmer-slide { to { --lb-shimmer: 200%; } }
+.lb-shimmer-wave {
+  background:
+    linear-gradient(rgba(15,23,42,0.96), rgba(15,23,42,0.96)) padding-box,
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.06) 0%,
+      rgba(255,255,255,0.06) calc(var(--lb-shimmer) - 30%),
+      rgba(147,210,255,0.7)  var(--lb-shimmer),
+      rgba(255,255,255,0.06) calc(var(--lb-shimmer) + 30%),
+      rgba(255,255,255,0.06) 100%
+    ) border-box;
+  border: 1.5px solid transparent;
+  animation: lb-shimmer-slide 2.2s linear infinite;
+}
+
+/* ── 6. NEON-BREATHE — solid neon border that pulses in scale + glow ── */
+@keyframes lb-neon-breathe {
+  0%,100% {
+    border-color: rgba(40,101,235,0.35);
+    box-shadow: 0 0 6px rgba(40,101,235,0.2), inset 0 0 6px rgba(40,101,235,0.04);
+  }
+  33% {
+    border-color: rgba(6,182,212,0.55);
+    box-shadow: 0 0 20px rgba(6,182,212,0.3), inset 0 0 10px rgba(6,182,212,0.06);
+  }
+  66% {
+    border-color: rgba(99,102,241,0.55);
+    box-shadow: 0 0 20px rgba(99,102,241,0.3), inset 0 0 10px rgba(99,102,241,0.06);
+  }
+}
+.lb-neon-breathe {
+  border: 1.5px solid rgba(40,101,235,0.35) !important;
+  animation: lb-neon-breathe 3.5s ease-in-out infinite;
+}
+
+/* ── Wrapper pattern for cards with overflow:hidden ──
+   Use .lb-outer on a parent (padding:2px, border-radius slightly larger)
+   and the child keeps overflow:hidden with border-radius 2px less.
+   The animation class goes on .lb-outer.
+   lb-outer fills gap between border and clip with dark bg. ── */
+.lb-outer {
+  padding: 2px;
+  border-radius: 22px; /* 2px more than inner */
+  position: relative;
+  display: block;
+}
+.lb-outer > * {
+  border-radius: 20px !important;
+  background-clip: padding-box;
+}
+
+/* ── Space Grotesk display font on all hero H1s ── */
+.services__heading,
+.solutions__heading,
+.ia-overview-heading,
+.ia-benefits-title,
+.ia-gallery-heading,
+.ia-cta-heading,
+.rb-section-title,
+.rb-cta-heading,
+.dc-section-title,
+.dc-cta-heading,
+.elv-cta-heading,
+.rbs-overview-heading,
+.rbs-benefits-heading,
+.rbs-cta-heading,
+.dcs-overview-heading,
+.dcs-cta-heading,
+.dcs-benefits-heading,
+.sf-tabs-heading,
+.sf-ben-heading,
+.sf-cta-heading,
+.as-steps-heading,
+.as-adv-heading,
+.as-cta-heading,
+.ce-phases-heading,
+.ce-cta-heading,
+.sw-feat__heading,
+.service-sec__heading,
+.solution-sec__heading {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION TRANSITIONS — smooth blends between sections
+   ═══════════════════════════════════════════════════════════ */
+
+/* Generic: any section following another fades its top edge */
+.ia-main-section,
+.ia-benefits-section,
+.rb-pillars-section,
+.rb-bento-section,
+.dc-services-section,
+.elv-main-section,
+.rbs-overview-section,
+.rbs-benefits-section,
+.dcs-main-section,
+.dcs-benefits-section,
+.sf-tabs-section,
+.sf-benefits-section,
+.as-steps-section,
+.as-advantages-section,
+.ce-phases-section,
+.ce-benefits-section,
+.it-infra-section,
+.service-sec,
+.solution-sec {
+  position: relative;
+}
+
+/* Top fade-in gradient pseudo — dark pages */
+.ia-main-section::before,
+.ia-gallery-section::before,
+.rb-bento-section::before,
+.elv-main-section::before,
+.dcs-main-section::before,
+.as-advantages-section::before,
+.ce-benefits-section::before,
+.it-infra-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--section-fade-from, rgba(8,13,24,1)) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Hero → first section transition: hero bottom fades into content */
+.services__hero::after,
+.solutions__hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(8,13,24,0.0) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Light section top blends — for pages with light-to-dark transitions */
+.dc-services-section::before,
+.sf-tabs-section::before,
+.ce-phases-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.04) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* CTA section top edge softener for dark pages */
+.ia-cta-section,
+.rb-cta-section,
+.dc-cta-section,
+.elv-cta-section,
+.rbs-cta-section,
+.dcs-cta-section,
+.sf-cta-section,
+.as-cta-section,
+.ce-cta-section {
+  position: relative;
+}
+.ia-cta-section::before,
+.rb-cta-section::before,
+.dc-cta-section::before,
+.elv-cta-section::before,
+.rbs-cta-section::before,
+.dcs-cta-section::before,
+.sf-cta-section::before,
+.as-cta-section::before,
+.ce-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.04) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
